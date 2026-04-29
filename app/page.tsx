@@ -188,3 +188,14 @@ export default function Home() {
     </div>
   </div>
 </section>
+export default function Home() {
+  return (
+    <main style={{ textAlign: "center", padding: "40px" }}>
+      <img src="/logo.png" alt="HVAC logo" style={{ width: "150px" }} />
+
+      <h1>HVAC Pro Services</h1>
+      <p>Chauffage • Ventilation • Climatisation</p>
+   <h2>Site en construction</h2>
+    </main>
+  );
+}
