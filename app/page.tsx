@@ -126,3 +126,65 @@ export default function Home() {
     </main>
   );
 }
+<header className="bg-white shadow-md sticky top-0 z-50">
+  <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+    {/* LOGO */}
+    <div className="flex items-center gap-3">
+      <img src="/logo.png" alt="A&C Company" className="h-14" />
+    </div>
+
+    {/* NAV */}
+    <nav className="hidden md:flex gap-8 font-medium text-gray-700">
+      <a href="#" className="text-blue-900 font-semibold">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    {/* CTA */}
+    <div className="flex gap-3">
+      <a href="tel:0484477780" className="bg-blue-600 text-white px-4 py-2 rounded-lg">
+        0484 47 77 80
+      </a>
+      <a href="https://wa.me/32484477780" className="bg-green-600 text-white px-4 py-2 rounded-lg">
+        WhatsApp
+      </a>
+    </div>
+
+  </div>
+</header>
+<section className="relative text-white">
+
+  <img
+    src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39"
+    className="absolute w-full h-full object-cover"
+  />
+
+  <div className="relative bg-black/60 py-28 px-6">
+    <div className="max-w-7xl mx-auto">
+
+      <p className="text-orange-400 font-semibold mb-2">
+        VOTRE CONFORT, NOTRE PRIORITÉ
+      </p>
+
+      <h2 className="text-5xl font-bold mb-4">
+        Chauffage, Sanitaire<br />
+        et Plomberie <span className="text-blue-400">en Belgique</span>
+      </h2>
+
+      <p className="max-w-xl mb-6">
+        Des solutions fiables, performantes et durables pour votre maison ou votre entreprise.
+      </p>
+
+      <div className="flex gap-4">
+        <a href="tel:0484477780" className="bg-blue-600 px-6 py-3 rounded-xl">
+          Appeler maintenant
+        </a>
+        <a href="#contact" className="border px-6 py-3 rounded-xl">
+          Demander un devis
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
