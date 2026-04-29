@@ -1,6 +1,9 @@
 export const metadata = {
   title: "HVAC Pro Services",
-  description: "HVAC services",
+  description: "Services professionnels HVAC en Belgique",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
