@@ -7,8 +7,9 @@ export default function Home() {
   <img src="/logo.png" alt="A&C Company logo" className="w-10 h-10" />
   <div className="flex flex-col leading-tight">
     <span className="font-bold text-lg">A&C Company SRL</span>
-    <span className="text-xs text-gray-500">
-      Chauffage • Sanitaire • Plomberie
+    <<span className="text-xs text-gray-500">
+  Chauffage • Sanitaire • Plomberie
+</span>
     </span>
   </div>
 </div>
