@@ -29,37 +29,40 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="bg-[#1f2937] text-white py-24 text-center px-6">
+     <section className="bg-[#1f2937] text-white py-28 text-center px-6">
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Chauffage • Sanitaire • Plomberie
-        </h1>
+  <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+    Chauffage • Sanitaire • Plomberie
+  </h1>
 
-        <p className="max-w-xl mx-auto mb-8 text-gray-300">
-          Services professionnels en Belgique. Installation, dépannage rapide
-          et entretien de systèmes de chauffage et plomberie.
-        </p>
+  <p className="text-gray-300 max-w-xl mx-auto mb-6">
+    Intervention rapide à Bruxelles et partout en Belgique.
+    Installation, dépannage et entretien par des professionnels certifiés.
+  </p>
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
+  <div className="mb-8 text-sm text-gray-400">
+    ✔ +10 ans d'expérience • ✔ Intervention 24h • ✔ Devis gratuit
+  </div>
 
-          <a
-            href="tel:+32400000000"
-            className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a] transition"
-          >
-            Demander un devis
-          </a>
+  <div className="flex flex-col md:flex-row gap-4 justify-center">
 
-          <a
-            href="https://wa.me/32400000000"
-            className="border border-white px-6 py-3 rounded hover:bg-white hover:text-[#1f2937] transition"
-          >
-            WhatsApp
-          </a>
+    <a
+      href="tel:+32400000000"
+      className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a] transition"
+    >
+      📞 Appeler maintenant
+    </a>
 
-        </div>
+    <a
+      href="https://wa.me/32400000000"
+      className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black transition"
+    >
+      💬 WhatsApp
+    </a>
 
-      </section>
+  </div>
 
+</section>
       {/* SERVICES */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
