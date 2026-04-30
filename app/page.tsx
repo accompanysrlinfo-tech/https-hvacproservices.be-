@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#f3f4f6] text-gray-800 font-sans">
 
@@ -28,7 +34,7 @@ export default function Home() {
       {/* HERO */}
       <section className="bg-[#1f2937] text-white py-28 text-center px-6">
 
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Chauffage • Sanitaire • Plomberie
         </h1>
 
@@ -45,14 +51,14 @@ export default function Home() {
 
           <a
             href="tel:+32400000000"
-            className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a] transition"
+            className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a]"
           >
             📞 Appeler maintenant
           </a>
 
           <a
             href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis"
-            className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black transition"
+            className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black"
           >
             💬 WhatsApp
           </a>
@@ -62,61 +68,24 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-
-          <h2 className="text-3xl font-semibold mb-12 text-[#1f2937]">
-            Nos Services
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            <div className="bg-white p-6 rounded-lg border">
-              <h3 className="font-semibold text-lg mb-2">Chauffage</h3>
-              <p className="text-gray-600">
-                Installation et dépannage de systèmes de chauffage performants.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg border">
-              <h3 className="font-semibold text-lg mb-2">Sanitaire</h3>
-              <p className="text-gray-600">
-                Installation complète de salles de bain et équipements sanitaires.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg border">
-              <h3 className="font-semibold text-lg mb-2">Plomberie</h3>
-              <p className="text-gray-600">
-                Réparation de fuites, débouchage et installations.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* WHY */}
-      <section className="bg-white py-20 px-6 text-center border-t">
-        <h2 className="text-3xl font-semibold mb-12 text-[#1f2937]">
-          Pourquoi nous choisir ?
-        </h2>
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-3xl font-semibold mb-12">Nos Services</h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-          <div>
-            <p className="font-semibold mb-2">⚡ Rapide</p>
-            <p className="text-gray-600">Intervention en Belgique</p>
+          <div className="bg-white p-6 rounded border">
+            <h3 className="font-semibold mb-2">Chauffage</h3>
+            <p>Installation et dépannage de systèmes de chauffage.</p>
           </div>
 
-          <div>
-            <p className="font-semibold mb-2">👷 Professionnel</p>
-            <p className="text-gray-600">Techniciens qualifiés</p>
+          <div className="bg-white p-6 rounded border">
+            <h3 className="font-semibold mb-2">Sanitaire</h3>
+            <p>Installation de salles de bain et équipements sanitaires.</p>
           </div>
 
-          <div>
-            <p className="font-semibold mb-2">💰 Transparent</p>
-            <p className="text-gray-600">Devis gratuit</p>
+          <div className="bg-white p-6 rounded border">
+            <h3 className="font-semibold mb-2">Plomberie</h3>
+            <p>Réparation de fuites et débouchage.</p>
           </div>
 
         </div>
@@ -129,14 +98,26 @@ export default function Home() {
           Demandez votre devis gratuit
         </h2>
 
-        <p className="text-gray-300 mb-6">
-          Réponse rapide • Intervention en Belgique
-        </p>
-
         <form
           className="max-w-xl mx-auto mt-8 space-y-4"
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
+            setLoading(true);
+
+            const formData = new FormData(e.currentTarget);
+
+            const data = {
+              name: formData.get("name"),
+              email: formData.get("email"),
+              message: formData.get("message"),
+            };
+
+            await fetch("/api/contact", {
+              method: "POST",
+              body: JSON.stringify(data),
+            });
+
+            setLoading(false);
             alert("Message envoyé !");
           }}
         >
@@ -144,29 +125,30 @@ export default function Home() {
           <input
             name="name"
             placeholder="Nom"
-            className="w-full p-3 rounded bg-white text-black"
+            className="w-full p-3 rounded text-black"
             required
           />
 
           <input
             name="email"
             placeholder="Email"
-            className="w-full p-3 rounded bg-white text-black"
+            className="w-full p-3 rounded text-black"
             required
           />
 
           <textarea
             name="message"
             placeholder="Votre demande..."
-            className="w-full p-3 rounded bg-white text-black"
+            className="w-full p-3 rounded text-black"
             required
           />
 
           <button
             type="submit"
-            className="bg-[#2563eb] px-6 py-3 rounded w-full hover:bg-[#1e3a8a] transition"
+            disabled={loading}
+            className="bg-[#2563eb] px-6 py-3 rounded w-full hover:bg-[#1e3a8a]"
           >
-            Envoyer
+            {loading ? "Envoi..." : "Envoyer"}
           </button>
 
         </form>
@@ -177,7 +159,10 @@ export default function Home() {
             📞 Appeler
           </a>
 
-          <a href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis" className="bg-green-500 px-6 py-3 rounded">
+          <a
+            href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis"
+            className="bg-green-500 px-6 py-3 rounded"
+          >
             WhatsApp
           </a>
 
