@@ -3,17 +3,15 @@ export default function Home() {
     <main className="min-h-screen bg-gray-100 text-gray-900">
 
       {/* HEADER */}
-      <header className="bg-white shadow p-4 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="HVAC logo" className="w-10 h-10" />
-          <h1 className="text-xl font-bold">HVAC Pro Services</h1>
-        </div>
-
-        <nav className="space-x-4">
-          <a href="#services" className="hover:text-blue-600">Services</a>
-          <a href="#contact" className="hover:text-blue-600">Contact</a>
-        </nav>
-      </header>
+      <div className="flex items-center gap-3">
+  <img src="/logo.png" alt="A&C Company logo" className="w-10 h-10" />
+  <div className="flex flex-col leading-tight">
+    <span className="font-bold text-lg">A&C Company SRL</span>
+    <span className="text-xs text-gray-500">
+      Chauffage • Sanitaire • Plomberie
+    </span>
+  </div>
+</div>
 
       {/* HERO */}
       <section className="bg-blue-600 text-white text-center py-20">
