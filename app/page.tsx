@@ -24,7 +24,7 @@ export default function Home() {
             </div>
           </div>
 
-          <a href="tel:+32400000000" className="text-[#2563eb] font-medium">
+          <a href="tel:+32484477780" className="text-[#2563eb] font-medium">
             📞 Appeler
           </a>
 
@@ -32,10 +32,9 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="bg-[#1f2937] text-white py-28 text-center px-6">
-
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Chauffage • Sanitaire • Plomberie
+      <section className="bg-[#1f2937] text-white py-24 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          Chauffage • Sanitaire • Plomberie en Belgique
         </h1>
 
         <p className="text-gray-300 max-w-xl mx-auto mb-6">
@@ -43,33 +42,71 @@ export default function Home() {
           Installation, dépannage et entretien par des professionnels certifiés.
         </p>
 
-        <div className="mb-8 text-sm text-gray-400">
-          ✔ +10 ans d'expérience • ✔ Intervention 24h • ✔ Devis gratuit
-        </div>
-
         <div className="flex flex-col md:flex-row gap-4 justify-center">
 
           <a
-            href="tel:+32400000000"
-            className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a]"
+            href="tel:+32484477780"
+            className="bg-[#2563eb] px-6 py-3 rounded"
           >
             📞 Appeler maintenant
           </a>
 
           <a
-            href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis"
-            className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black"
+            href="https://wa.me/32484477780?text=Bonjour%20je%20souhaite%20un%20devis"
+            className="border border-white px-6 py-3 rounded"
           >
             💬 WhatsApp
           </a>
 
         </div>
+      </section>
 
+      {/* PROFIL / ABOUT */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+          {/* IMAGE */}
+          <img
+            src="/profile.jpg"
+            alt="Technicien A&C Company"
+            className="rounded-xl shadow-lg w-full"
+          />
+
+          {/* TEXT */}
+          <div>
+            <h2 className="text-3xl font-semibold mb-4 text-[#1f2937]">
+              Votre expert en chauffage et plomberie
+            </h2>
+
+            <p className="text-gray-600 mb-4">
+              Chez A&C Company SRL, nous proposons des services professionnels
+              de chauffage, plomberie et installation sanitaire en Belgique.
+              Nous garantissons des interventions rapides, un travail de qualité
+              et des solutions adaptées à chaque client.
+            </p>
+
+            <p className="text-gray-600 mb-6">
+              ✔ Installation complète  
+              ✔ Dépannage rapide  
+              ✔ Entretien professionnel  
+            </p>
+
+            <a
+              href="tel:+32484477780"
+              className="bg-[#2563eb] text-white px-6 py-3 rounded"
+            >
+              📞 Contactez-nous
+            </a>
+          </div>
+
+        </div>
       </section>
 
       {/* SERVICES */}
       <section className="py-20 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-12">Nos Services</h2>
+        <h2 className="text-3xl font-semibold mb-12">
+          Nos Services
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
@@ -122,51 +159,15 @@ export default function Home() {
           }}
         >
 
-          <input
-            name="name"
-            placeholder="Nom"
-            className="w-full p-3 rounded text-black"
-            required
-          />
+          <input name="name" placeholder="Nom" className="w-full p-3 rounded text-black" required />
+          <input name="email" placeholder="Email" className="w-full p-3 rounded text-black" required />
+          <textarea name="message" placeholder="Votre demande..." className="w-full p-3 rounded text-black" required />
 
-          <input
-            name="email"
-            placeholder="Email"
-            className="w-full p-3 rounded text-black"
-            required
-          />
-
-          <textarea
-            name="message"
-            placeholder="Votre demande..."
-            className="w-full p-3 rounded text-black"
-            required
-          />
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-[#2563eb] px-6 py-3 rounded w-full hover:bg-[#1e3a8a]"
-          >
+          <button className="bg-[#2563eb] px-6 py-3 rounded w-full">
             {loading ? "Envoi..." : "Envoyer"}
           </button>
 
         </form>
-
-        <div className="flex flex-col md:flex-row gap-4 justify-center mt-8">
-
-          <a href="tel:+32400000000" className="border px-6 py-3 rounded">
-            📞 Appeler
-          </a>
-
-          <a
-            href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis"
-            className="bg-green-500 px-6 py-3 rounded"
-          >
-            WhatsApp
-          </a>
-
-        </div>
 
       </section>
 
