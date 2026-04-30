@@ -7,7 +7,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
 
           <div className="flex items-center gap-3">
-            <img src="/logo.png" className="w-10 h-10" />
+            <img src="/logo.png" alt="A&C Company logo" className="w-10 h-10" />
             <div>
               <p className="font-semibold text-lg text-[#1f2937]">
                 A&C Company SRL
@@ -18,10 +18,7 @@ export default function Home() {
             </div>
           </div>
 
-          <a
-            href="tel:+32400000000"
-            className="text-[#2563eb] font-medium"
-          >
+          <a href="tel:+32400000000" className="text-[#2563eb] font-medium">
             📞 Appeler
           </a>
 
@@ -29,40 +26,41 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-     <section className="bg-[#1f2937] text-white py-28 text-center px-6">
+      <section className="bg-[#1f2937] text-white py-28 text-center px-6">
 
-  <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-    Chauffage • Sanitaire • Plomberie
-  </h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          Chauffage • Sanitaire • Plomberie
+        </h1>
 
-  <p className="text-gray-300 max-w-xl mx-auto mb-6">
-    Intervention rapide à Bruxelles et partout en Belgique.
-    Installation, dépannage et entretien par des professionnels certifiés.
-  </p>
+        <p className="text-gray-300 max-w-xl mx-auto mb-6">
+          Intervention rapide à Bruxelles et partout en Belgique.
+          Installation, dépannage et entretien par des professionnels certifiés.
+        </p>
 
-  <div className="mb-8 text-sm text-gray-400">
-    ✔ +10 ans d'expérience • ✔ Intervention 24h • ✔ Devis gratuit
-  </div>
+        <div className="mb-8 text-sm text-gray-400">
+          ✔ +10 ans d'expérience • ✔ Intervention 24h • ✔ Devis gratuit
+        </div>
 
-  <div className="flex flex-col md:flex-row gap-4 justify-center">
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
 
-    <a
-      href="tel:+32400000000"
-      className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a] transition"
-    >
-      📞 Appeler maintenant
-    </a>
+          <a
+            href="tel:+32400000000"
+            className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a] transition"
+          >
+            📞 Appeler maintenant
+          </a>
 
-    <a
-      href="https://wa.me/32400000000"
-      className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black transition"
-    >
-      💬 WhatsApp
-    </a>
+          <a
+            href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis"
+            className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black transition"
+          >
+            💬 WhatsApp
+          </a>
 
-  </div>
+        </div>
 
-</section>
+      </section>
+
       {/* SERVICES */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -128,27 +126,46 @@ export default function Home() {
       <section className="bg-[#1f2937] text-white py-20 px-6 text-center">
 
         <h2 className="text-3xl font-semibold mb-4">
-          Demandez votre devis
+          Demandez votre devis gratuit
         </h2>
 
-        <form className="max-w-xl mx-auto mt-8 space-y-4">
+        <p className="text-gray-300 mb-6">
+          Réponse rapide • Intervention en Belgique
+        </p>
+
+        <form
+          className="max-w-xl mx-auto mt-8 space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Message envoyé !");
+          }}
+        >
 
           <input
+            name="name"
             placeholder="Nom"
             className="w-full p-3 rounded bg-white text-black"
+            required
           />
 
           <input
+            name="email"
             placeholder="Email"
             className="w-full p-3 rounded bg-white text-black"
+            required
           />
 
           <textarea
+            name="message"
             placeholder="Votre demande..."
             className="w-full p-3 rounded bg-white text-black"
+            required
           />
 
-          <button className="bg-[#2563eb] px-6 py-3 rounded w-full hover:bg-[#1e3a8a] transition">
+          <button
+            type="submit"
+            className="bg-[#2563eb] px-6 py-3 rounded w-full hover:bg-[#1e3a8a] transition"
+          >
             Envoyer
           </button>
 
@@ -160,7 +177,7 @@ export default function Home() {
             📞 Appeler
           </a>
 
-          <a href="https://wa.me/32400000000" className="bg-green-500 px-6 py-3 rounded">
+          <a href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis" className="bg-green-500 px-6 py-3 rounded">
             WhatsApp
           </a>
 
