@@ -1,36 +1,172 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 text-gray-900">
+    <main className="min-h-screen bg-gray-100 text-gray-900 font-sans">
 
       {/* HEADER */}
-      <div className="flex items-center gap-3 p-4">
-        <img src="/logo.png" alt="A&C Company logo" className="w-10 h-10" />
-        <div className="flex flex-col leading-tight">
-          <span className="font-bold text-lg">A&C Company SRL</span>
-          <span className="text-xs text-gray-500">
-            Chauffage • Climatisation • Ventilation
-          </span>
+      <header className="bg-white shadow p-4">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="A&C Company logo" className="w-10 h-10" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-lg">A&C Company SRL</span>
+              <span className="text-xs text-gray-500">
+                Chauffage • Climatisation • Ventilation
+              </span>
+            </div>
+          </div>
+
+          <a
+            href="tel:+32400000000"
+            className="text-blue-600 font-semibold"
+          >
+            📞 Appeler maintenant
+          </a>
+
         </div>
-      </div>
+      </header>
 
       {/* HERO */}
-      <section className="bg-blue-600 text-white text-center py-20">
-        <h2 className="text-4xl font-bold mb-4">
+      <section className="bg-blue-600 text-white text-center py-20 px-6">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Chauffage, Climatisation & Ventilation en Belgique
+        </h1>
+
+        <p className="mb-6 max-w-2xl mx-auto">
+          A&C Company SRL propose des services professionnels d'installation,
+          dépannage et entretien HVAC pour particuliers et entreprises.
+          Intervention rapide partout en Belgique.
+        </p>
+
+        <p className="mb-8">
+          ✔ Intervention rapide • ✔ Devis gratuit • ✔ Service garanti
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+
+          <a
+            href="tel:+32400000000"
+            className="bg-white text-blue-600 px-6 py-3 rounded shadow hover:bg-gray-100"
+          >
+            📞 Demander un devis gratuit
+          </a>
+
+          <a
+            href="https://wa.me/32400000000"
+            className="bg-green-500 px-6 py-3 rounded shadow hover:bg-green-600"
+          >
+            💬 Contactez-nous sur WhatsApp
+          </a>
+
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+
+          <h2 className="text-3xl font-bold mb-12">Nos Services</h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+            {/* Chauffage */}
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-3">Chauffage</h3>
+              <p>
+                Installation, dépannage et entretien de systèmes de chauffage en Belgique.
+                Chaudières, radiateurs et pompes à chaleur.
+                Intervention rapide pour particuliers et entreprises.
+              </p>
+            </div>
+
+            {/* Climatisation */}
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-3">Climatisation</h3>
+              <p>
+                Installation et maintenance de climatisation pour un confort optimal toute l’année.
+                Solutions modernes, économiques et adaptées à vos besoins.
+              </p>
+            </div>
+
+            {/* Ventilation */}
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-3">Ventilation</h3>
+              <p>
+                Installation de systèmes de ventilation pour améliorer la qualité de l’air intérieur.
+                Réduction de l’humidité et circulation d’air optimale.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section id="why" className="bg-gray-200 py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+
+          <h2 className="text-3xl font-bold mb-12">
+            Pourquoi choisir A&C Company SRL ?
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+            <div>
+              <h3 className="font-bold text-lg mb-2">⚡ Intervention rapide</h3>
+              <p>Disponible partout en Belgique, dépannage rapide garanti.</p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-2">👷 Techniciens qualifiés</h3>
+              <p>Experts HVAC certifiés avec expérience professionnelle.</p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-2">💰 Devis transparent</h3>
+              <p>Prix clairs, sans frais cachés, devis gratuit.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="bg-blue-600 text-white py-16 text-center px-6">
+
+        <h2 className="text-3xl font-bold mb-4">
+          Besoin d’un dépannage ou d’une installation ?
         </h2>
 
         <p className="mb-6">
-          A&C Company SRL propose des services professionnels d'installation,
-          dépannage et entretien HVAC pour particuliers et entreprises.
+          Contactez A&C Company SRL dès maintenant pour un devis gratuit et une intervention rapide.
         </p>
 
-        <a
-          href="tel:+32400000000"
-          className="bg-white text-blue-600 px-6 py-2 rounded"
-        >
-          📞 Demander un devis
-        </a>
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+
+          <a
+            href="tel:+32400000000"
+            className="bg-white text-blue-600 px-6 py-3 rounded"
+          >
+            📞 Appeler
+          </a>
+
+          <a
+            href="https://wa.me/32400000000"
+            className="bg-green-500 px-6 py-3 rounded"
+          >
+            WhatsApp
+          </a>
+
+        </div>
+
       </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-900 text-white text-center p-6">
+        © 2025 A&C Company SRL - Belgique <br />
+        Chauffage • Climatisation • Ventilation
+      </footer>
 
     </main>
   );
