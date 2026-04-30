@@ -1,89 +1,93 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 text-gray-900 font-sans">
+    <main className="min-h-screen bg-[#f3f4f6] text-gray-800 font-sans">
 
       {/* HEADER */}
-      <header className="bg-white shadow p-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
+      <header className="bg-white border-b">
+        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
 
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="A&C Company logo" className="w-10 h-10" />
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg">A&C Company SRL</span>
-              <span className="text-xs text-gray-500">
+            <img src="/logo.png" className="w-10 h-10" />
+            <div>
+              <p className="font-semibold text-lg text-[#1f2937]">
+                A&C Company SRL
+              </p>
+              <p className="text-xs text-gray-500">
                 Chauffage • Sanitaire • Plomberie
-              </span>
+              </p>
             </div>
           </div>
 
-          <a href="tel:+32400000000" className="text-blue-600 font-semibold">
-            📞 Appeler maintenant
+          <a
+            href="tel:+32400000000"
+            className="text-[#2563eb] font-medium"
+          >
+            📞 Appeler
           </a>
 
         </div>
       </header>
 
       {/* HERO */}
-      <section className="bg-blue-600 text-white text-center py-20 px-6">
+      <section className="bg-[#1f2937] text-white py-24 text-center px-6">
+
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Chauffage, Sanitaire & Plomberie en Belgique
+          Chauffage • Sanitaire • Plomberie
         </h1>
 
-        <p className="mb-6 max-w-2xl mx-auto">
-          A&C Company SRL propose des services professionnels en chauffage,
-          plomberie et sanitaire à Bruxelles et partout en Belgique.
-          Intervention rapide et devis gratuit.
-        </p>
-
-        <p className="mb-8">
-          ✔ Intervention rapide • ✔ Devis gratuit • ✔ Service garanti
+        <p className="max-w-xl mx-auto mb-8 text-gray-300">
+          Services professionnels en Belgique. Installation, dépannage rapide
+          et entretien de systèmes de chauffage et plomberie.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center">
 
           <a
             href="tel:+32400000000"
-            className="bg-white text-blue-600 px-6 py-3 rounded shadow hover:bg-gray-100"
+            className="bg-[#2563eb] px-6 py-3 rounded text-white hover:bg-[#1e3a8a] transition"
           >
-            📞 Demander un devis
+            Demander un devis
           </a>
 
           <a
-            href="https://wa.me/32400000000?text=Bonjour%20je%20souhaite%20un%20devis"
-            className="bg-green-500 px-6 py-3 rounded shadow hover:bg-green-600"
+            href="https://wa.me/32400000000"
+            className="border border-white px-6 py-3 rounded hover:bg-white hover:text-[#1f2937] transition"
           >
-            💬 WhatsApp
+            WhatsApp
           </a>
 
         </div>
+
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
 
-          <h2 className="text-3xl font-bold mb-12">Nos Services</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-[#1f2937]">
+            Nos Services
+          </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
 
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">Chauffage</h3>
-              <p>
-                Installation, entretien et dépannage de chaudières et systèmes de chauffage.
+            <div className="bg-white p-6 rounded-lg border">
+              <h3 className="font-semibold text-lg mb-2">Chauffage</h3>
+              <p className="text-gray-600">
+                Installation et dépannage de systèmes de chauffage performants.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">Sanitaire</h3>
-              <p>
-                Installation de salles de bain, robinetterie et équipements sanitaires.
+            <div className="bg-white p-6 rounded-lg border">
+              <h3 className="font-semibold text-lg mb-2">Sanitaire</h3>
+              <p className="text-gray-600">
+                Installation complète de salles de bain et équipements sanitaires.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">Plomberie</h3>
-              <p>
-                Réparation de fuites, débouchage et installations de plomberie.
+            <div className="bg-white p-6 rounded-lg border">
+              <h3 className="font-semibold text-lg mb-2">Plomberie</h3>
+              <p className="text-gray-600">
+                Réparation de fuites, débouchage et installations.
               </p>
             </div>
 
@@ -92,60 +96,64 @@ export default function Home() {
       </section>
 
       {/* WHY */}
-      <section className="bg-gray-200 py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-12">
-          Pourquoi choisir A&C Company SRL ?
+      <section className="bg-white py-20 px-6 text-center border-t">
+        <h2 className="text-3xl font-semibold mb-12 text-[#1f2937]">
+          Pourquoi nous choisir ?
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
           <div>
-            <h3 className="font-bold text-lg mb-2">⚡ Rapide</h3>
-            <p>Intervention rapide partout en Belgique.</p>
+            <p className="font-semibold mb-2">⚡ Rapide</p>
+            <p className="text-gray-600">Intervention en Belgique</p>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-2">👷 Qualifié</h3>
-            <p>Techniciens expérimentés.</p>
+            <p className="font-semibold mb-2">👷 Professionnel</p>
+            <p className="text-gray-600">Techniciens qualifiés</p>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-2">💰 Transparent</h3>
-            <p>Prix clairs et devis gratuit.</p>
+            <p className="font-semibold mb-2">💰 Transparent</p>
+            <p className="text-gray-600">Devis gratuit</p>
           </div>
+
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="bg-blue-600 text-white py-16 text-center px-6">
+      <section className="bg-[#1f2937] text-white py-20 px-6 text-center">
 
-        <h2 className="text-3xl font-bold mb-4">
-          Demandez votre devis gratuit
+        <h2 className="text-3xl font-semibold mb-4">
+          Demandez votre devis
         </h2>
 
-        <p className="mb-6">
-          Contactez A&C Company SRL pour chauffage, plomberie et sanitaire en Belgique.
-        </p>
+        <form className="max-w-xl mx-auto mt-8 space-y-4">
 
-        {/* FORM */}
-        <form
-          className="max-w-xl mx-auto mt-8 space-y-4"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            alert("Message envoyé !");
-          }}
-        >
-          <input name="name" placeholder="Nom" className="w-full p-3 border rounded text-black" required />
-          <input name="email" placeholder="Email" className="w-full p-3 border rounded text-black" required />
-          <textarea name="message" placeholder="Votre demande..." className="w-full p-3 border rounded text-black" required />
+          <input
+            placeholder="Nom"
+            className="w-full p-3 rounded bg-white text-black"
+          />
 
-          <button type="submit" className="bg-white text-blue-600 px-6 py-3 rounded font-semibold">
-            Envoyer la demande
+          <input
+            placeholder="Email"
+            className="w-full p-3 rounded bg-white text-black"
+          />
+
+          <textarea
+            placeholder="Votre demande..."
+            className="w-full p-3 rounded bg-white text-black"
+          />
+
+          <button className="bg-[#2563eb] px-6 py-3 rounded w-full hover:bg-[#1e3a8a] transition">
+            Envoyer
           </button>
+
         </form>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center mt-8">
 
-          <a href="tel:+32400000000" className="bg-white text-blue-600 px-6 py-3 rounded">
+          <a href="tel:+32400000000" className="border px-6 py-3 rounded">
             📞 Appeler
           </a>
 
@@ -158,9 +166,8 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-white text-center p-6">
-        © 2025 A&C Company SRL - Belgique <br />
-        Chauffage • Sanitaire • Plomberie
+      <footer className="bg-black text-white text-center p-6 text-sm">
+        © 2025 A&C Company SRL — Belgique
       </footer>
 
     </main>
