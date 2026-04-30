@@ -137,7 +137,52 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-4">
           Besoin d’un dépannage ou d’une installation ?
         </h2>
+<form
+  className="max-w-xl mx-auto mt-10 space-y-4"
+  onSubmit={async (e) => {
+    e.preventDefault();
 
+    const formData = new FormData(e.currentTarget);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    alert("Message envoyé !");
+  }}
+>
+  <input
+    name="name"
+    placeholder="Nom"
+    className="w-full p-3 border rounded"
+    required
+  />
+
+  <input
+    name="email"
+    placeholder="Email"
+    className="w-full p-3 border rounded"
+    required
+  />
+
+  <textarea
+    name="message"
+    placeholder="Votre demande..."
+    className="w-full p-3 border rounded"
+    required
+  />
+
+  <button className="bg-blue-600 text-white px-6 py-3 rounded">
+    Envoyer la demande
+  </button>
+</form>
         <p className="mb-6">
           Contactez A&C Company SRL dès maintenant pour un devis gratuit et une intervention rapide.
         </p>
