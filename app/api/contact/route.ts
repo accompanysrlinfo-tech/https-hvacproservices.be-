@@ -1,28 +1,75 @@
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const apiKey = process.env.RESEND_API_KEY
+
+const resend = apiKey
+  ? new Resend(apiKey)
+  : null
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    if (!resend) {
+      return Response.json(
+        {
+          success: false,
+          error: "Missing RESEND_API_KEY",
+        },
+        {
+          status: 500,
+        }
+      )
+    }
+
+    const body = await req.json()
+
+    const { name, email, message } = body
 
     await resend.emails.send({
-      from: "A&C Company <onboarding@resend.dev>",
-      to: "Accompany.srlinfo@gmail.com",
-      subject: "Noua cerere de pe site",
+      from: "onboarding@resend.dev",
+
+      to: "accompany.srlinfo@gmail.com",
+
+      subject: "Nouvelle demande HVAC",
+
       html: `
-        <h2>Nou message</h2>
-        <p><strong>Nom:</strong> ${body.name}</p>
-        <p><strong>Email:</strong> ${body.email}</p>
-        <p><strong>Message:</strong> ${body.message}</p>
+        <div style="font-family: Arial; padding: 20px;">
+          <h1>Nouvelle demande HVAC</h1>
+
+          <p>
+            <strong>Nom:</strong> ${name}
+          </p>
+
+          <p>
+            <strong>Email:</strong> ${email}
+          </p>
+
+          <p>
+            <strong>Message:</strong>
+          </p>
+
+          <p>${message}</p>
+        </div>
       `,
-    });
+    })
 
-    return NextResponse.json({ success: true });
-
+    return Response.json(
+      {
+        success: true,
+      },
+      {
+        status: 200,
+      }
+    )
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: "Erreur envoi email" }, { status: 500 });
+    console.error(error)
+
+    return Response.json(
+      {
+        success: false,
+      },
+      {
+        status: 500,
+      }
+    )
   }
 }
