@@ -6,7 +6,9 @@ import { useState } from "react"
 export default function Home() {
   const [loading, setLoading] = useState(false)
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
     e.preventDefault()
 
     setLoading(true)
@@ -28,7 +30,9 @@ export default function Home() {
         body: JSON.stringify(data),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (result.success) {
         alert("Message envoyé avec succès !")
         e.currentTarget.reset()
       } else {
@@ -46,12 +50,14 @@ export default function Home() {
 
       {/* HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
           <div className="flex items-center gap-3">
+
             <Image
               src="/logo.png"
-              alt="A&C Company Logo"
+              alt="A&C Company SRL"
               width={50}
               height={50}
               className="rounded-full"
@@ -66,6 +72,7 @@ export default function Home() {
                 Chauffage • Sanitaire • Plomberie
               </p>
             </div>
+
           </div>
 
           <a
@@ -76,6 +83,7 @@ export default function Home() {
           </a>
 
         </div>
+
       </header>
 
       {/* HERO */}
@@ -85,7 +93,7 @@ export default function Home() {
 
           <div>
 
-            <div className="inline-block bg-white/10 border border-white/10 px-4 py-2 rounded-full text-sm mb-6">
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm mb-6">
               Bruxelles • Belgique
             </div>
 
@@ -94,8 +102,8 @@ export default function Home() {
             </h2>
 
             <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-xl">
-              Installation, dépannage et entretien professionnel partout en Belgique.
-              Service rapide, fiable et certifié.
+              Installation, dépannage et entretien professionnel
+              partout en Belgique.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -110,6 +118,7 @@ export default function Home() {
               <a
                 href="https://wa.me/32484477780?text=Bonjour%20je%20souhaite%20un%20devis"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="border border-white/20 hover:bg-white/10 transition-all duration-300 px-8 py-4 rounded-2xl font-semibold text-center"
               >
                 💬 WhatsApp
@@ -126,14 +135,20 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-6">
 
                 <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-4xl font-black">24/7</p>
+                  <p className="text-4xl font-black">
+                    24/7
+                  </p>
+
                   <p className="text-slate-300 mt-2">
                     Service d'urgence
                   </p>
                 </div>
 
                 <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-4xl font-black">100%</p>
+                  <p className="text-4xl font-black">
+                    100%
+                  </p>
+
                   <p className="text-slate-300 mt-2">
                     Satisfaction client
                   </p>
@@ -165,6 +180,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           <div>
+
             <Image
               src="/profile.jpg"
               alt="Technicien HVAC"
@@ -172,6 +188,7 @@ export default function Home() {
               height={700}
               className="rounded-3xl shadow-2xl w-full object-cover"
             />
+
           </div>
 
           <div>
@@ -186,12 +203,12 @@ export default function Home() {
 
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               A&C Company SRL propose des solutions professionnelles
-              de chauffage, plomberie et sanitaire pour particuliers et entreprises.
+              de chauffage, plomberie et sanitaire.
             </p>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Nous garantissons un travail de qualité, des équipements modernes
-              et une intervention rapide partout à Bruxelles et en Belgique.
+              Intervention rapide, travail professionnel
+              et équipements modernes.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -241,10 +258,6 @@ export default function Home() {
               Solutions professionnelles
             </h3>
 
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Services complets de chauffage, plomberie et installation sanitaire.
-            </p>
-
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -252,17 +265,18 @@ export default function Home() {
             {[
               {
                 title: "Chauffage",
-                desc: "Installation et dépannage de systèmes de chauffage modernes.",
+                desc: "Installation et dépannage de chauffage.",
               },
               {
                 title: "Sanitaire",
-                desc: "Installation de salles de bain et équipements sanitaires.",
+                desc: "Installation sanitaire complète.",
               },
               {
                 title: "Plomberie",
-                desc: "Réparation de fuites, débouchage et maintenance.",
+                desc: "Réparation et entretien plomberie.",
               },
             ].map((service, index) => (
+
               <div
                 key={index}
                 className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300"
@@ -279,6 +293,7 @@ export default function Home() {
                 </p>
 
               </div>
+
             ))}
 
           </div>
@@ -301,7 +316,7 @@ export default function Home() {
           </h3>
 
           <p className="text-slate-300 text-lg mb-12">
-            Contactez-nous pour une intervention rapide ou une étude personnalisée.
+            Contactez-nous pour une intervention rapide.
           </p>
 
           <form
@@ -337,7 +352,7 @@ export default function Home() {
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 py-4 rounded-2xl font-bold shadow-xl"
             >
-              {loading ? "Envoi..." : "Envoyer la demande"}
+              {loading ? "Envoi..." : "Envoyer"}
             </button>
 
           </form>
@@ -363,6 +378,7 @@ export default function Home() {
       <a
         href="https://wa.me/32484477780"
         target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 transition-all duration-300 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50"
       >
         💬
